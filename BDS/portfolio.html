@@ -34,7 +34,7 @@ section {padding:40px 20px; max-width:1000px; margin:auto;}
 
 <script>
 const driveFolderId = '1uJZfmoS6uj6FKpavhKTtGrrPVrQQiCYI';
-const apiKey = 'AIzaSyD...Js';
+const apiKey = 'AIzaSyD_eFTS6cqtTgx7QH-BdbTjNZ2JNxj5-Js';
 fetch(`https://www.googleapis.com/drive/v3/files?q='${driveFolderId}'+in+parents&key=${apiKey}&fields=files(id,name,mimeType,webContentLink)`)
 .then(res=>res.json())
 .then(data=>{
@@ -50,3 +50,4 @@ container.appendChild(img);
 </script>
 </body>
 </html>
+
