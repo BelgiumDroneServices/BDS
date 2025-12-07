@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BDS - Prestations</title>
+<style>
+body {margin:0; font-family:Arial,sans-serif; background-color:#2a2a2a; color:#f2f2f2;}
+header {background-color:#1a73e8; padding:15px; display:flex; justify-content:space-between; align-items:center;}
+header nav a {color:#fff; margin-left:20px; text-decoration:none; font-weight:bold;}
+header nav a:hover {text-decoration:underline;}
+.language {margin-left:20px; cursor:pointer;}
+section {padding:40px 20px; max-width:1000px; margin:auto;}
+.form-section {margin-bottom:20px;}
+input, select, textarea {width:100%; padding:8px; margin:5px 0; border-radius:5px; border:none;}
+button {background-color:#1a73e8; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;}
+button:hover {background-color:#1558b0;}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Belgium Drone Services</div>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="location.html">Location</a>
+    <a href="prestations.html">Prestations</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+    <span class="language" id="fr">FR</span> | <span class="language" id="nl">NL</span>
+</nav>
+</header>
+
+<section>
+<h1>Prestations par Drone</h1>
+<p>Secteurs : Immobilier, Privée, Evénements</p>
+
+<div class="form-section">
+<label>Type de prestation</label>
+<select id="secteur" onchange="changerForm()">
+<option value="">-- Choisir --</option>
+<option value="immobilier">Immobilier</option>
+<option value="prive">Privée</option>
+<option value="evenement">Evénement</option>
+</select>
+</div>
+
+<div id="formulaire"></div>
+<button onclick="alert('Formulaire envoyé !')">Envoyer</button>
+
+<script>
+function changerForm(){
+const secteur=document.getElementById('secteur').value;
+const formDiv=document.getElementById('formulaire');
+formDiv.innerHTML='';
+if(secteur==='immobilier'){
+formDiv.innerHTML=`<div class='form-section'><label>Type de bien</label><select><option>Appartement</option><option>Maison</option><option>Domaine privé</option></select></div>
+<div class='form-section'><label>Surface (m²)</label><input type='number'></div>
+<div class='form-section'><label>Nombre de chambres</label><input type='number'></div>`;
+}else if(secteur==='prive'){
+formDiv.innerHTML=`<div class='form-section'><label>Lieu/Propriété</label><input type='text'></div>
+<div class='form-section'><label>Motif</label><textarea></textarea></div>`;
+}else if(secteur==='evenement'){
+formDiv.innerHTML=`<div class='form-section'><label>Type d'événement</label><select><option>Mariage</option><option>Événement sportif</option><option>Autre</option></select></div>
+<div class='form-section'><label>Description</label><textarea></textarea></div>`;
+}
+}
+
+// Language switch same as index.html
+const translations = { /* Même structure que index.html */ };
+document.getElementById('nl').addEventListener('click',()=>{switchLang('nl')});
+document.getElementById('fr').addEventListener('click',()=>{switchLang('fr')});
+function switchLang(lang){ /* Même fonction que index.html */ }
+</script>
+
+</section>
+</body>
+</html>

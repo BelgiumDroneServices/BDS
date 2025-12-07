@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BDS - Contact</title>
+<style>
+body {margin:0; font-family:Arial,sans-serif; background-color:#2a2a2a; color:#f2f2f2;}
+header {background-color:#1a73e8; padding:15px; display:flex; justify-content:space-between; align-items:center;}
+header nav a {color:#fff; margin-left:20px; text-decoration:none; font-weight:bold;}
+header nav a:hover {text-decoration:underline;}
+.language {margin-left:20px; cursor:pointer;}
+section {padding:40px 20px; max-width:1000px; margin:auto;}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Belgium Drone Services</div>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="location.html">Location</a>
+    <a href="prestations.html">Prestations</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+    <span class="language" id="fr">FR</span> | <span class="language" id="nl">NL</span>
+</nav>
+</header>
+
+<section>
+<h1>Contact</h1>
+<p>Pour toute demande, envoyez un message sur WhatsApp ou par mail :</p>
+<p>Téléphone : +32 489 65 86 52</p>
+<p>Email : belgiumdroneservices@gmail.com</p>
+<p>Indiquez votre nom, le service souhaité ou votre question.</p>
+</section>
+
+<script>
+// Language switch same as index.html
+const translations = { /* Même structure que index.html */ };
+document.getElementById('nl').addEventListener('click',()=>{switchLang('nl')});
+document.getElementById('fr').addEventListener('click',()=>{switchLang('fr')});
+function switchLang(lang){ /* Même fonction que index.html */ }
+</script>
+</body>
+</html>

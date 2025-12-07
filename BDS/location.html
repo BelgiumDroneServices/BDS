@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BDS - Location</title>
+<style>
+body {margin:0; font-family:Arial,sans-serif; background-color:#2a2a2a; color:#f2f2f2;}
+header {background-color:#1a73e8; padding:15px; display:flex; justify-content:space-between; align-items:center;}
+header nav a {color:#fff; margin-left:20px; text-decoration:none; font-weight:bold;}
+header nav a:hover {text-decoration:underline;}
+.language {margin-left:20px; cursor:pointer;}
+section {padding:40px 20px; max-width:1000px; margin:auto;}
+button {background-color:#1a73e8; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;}
+button:hover {background-color:#1558b0;}
+table {width:100%; margin-top:20px; border-collapse: collapse;}
+td {padding:8px; border:1px solid #555;}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Belgium Drone Services</div>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="location.html">Location</a>
+    <a href="prestations.html">Prestations</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+    <span class="language" id="fr">FR</span> | <span class="language" id="nl">NL</span>
+</nav>
+</header>
+
+<section>
+<h1>Location de Drone</h1>
+<p>Drone DJI Air 2 avec :</p>
+<ul>
+<li>3 batteries incluses</li>
+<li>Manette de contrôle</li>
+<li>Carte SD 128GB</li>
+<li>Hub pour lire le contenu de la carte SD</li>
+<li>Sacoche de transport</li>
+<li>Chargeur pour les 3 batteries</li>
+<li>Câbles de connexion selon téléphone</li>
+<li>Filtres ND et hélices de rechange</li>
+<li>Drone très stable pour photos et vidéos</li>
+</ul>
+
+<h3>Tarifs de livraison (optionnelle)</h3>
+<table>
+<tr><td>0 – 20 km</td><td>10 €</td></tr>
+<tr><td>20 – 50 km</td><td>20 €</td></tr>
+<tr><td>50 – 100 km</td><td>30 €</td></tr>
+<tr><td>+ 100 km</td><td>Sur devis</td></tr>
+</table>
+
+<button onclick="window.location.href='contact.html'">Réserver / Demander un devis</button>
+</section>
+
+<script>
+// Language switch same as index.html
+const translations = { /* Même structure que index.html */ };
+document.getElementById('nl').addEventListener('click',()=>{switchLang('nl')});
+document.getElementById('fr').addEventListener('click',()=>{switchLang('fr')});
+function switchLang(lang){ /* Même fonction que index.html */ }
+</script>
+</body>
+</html>

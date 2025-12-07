@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BDS - Accueil</title>
+<style>
+body {margin:0; font-family:Arial,sans-serif; background-color:#2a2a2a; color:#f2f2f2;}
+header {background-color:#1a73e8; padding:15px; display:flex; justify-content:space-between; align-items:center;}
+header nav a {color:#fff; margin-left:20px; text-decoration:none; font-weight:bold;}
+header nav a:hover {text-decoration:underline;}
+.language {margin-left:20px; cursor:pointer;}
+section {padding:40px 20px; max-width:1000px; margin:auto;}
+.bubble {background-color:#3a3a3a; padding:15px; margin:15px 0; border-radius:10px;}
+button {background-color:#1a73e8; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;}
+button:hover {background-color:#1558b0;}
+.hidden {display:none;}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Belgium Drone Services</div>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="location.html">Location</a>
+    <a href="prestations.html">Prestations</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+    <span class="language" id="fr">FR</span> | <span class="language" id="nl">NL</span>
+</nav>
+</header>
+
+<section>
+<h1>Bienvenue chez Belgium Drone Services</h1>
+<p>BDS propose des prestations professionnelles de photographie et vidéo par drone ainsi que la location de drones stables et performants pour particuliers et entreprises.</p>
+
+<div class="bubble">
+<h3>Licence & Sécurité</h3>
+<p>Tout client doit posséder la licence de pilote drone obligatoire en Belgique. C’est simple, rapide et légal, et permet d’éviter de lourdes amendes.</p>
+<button onclick="document.getElementById('plus-info').classList.toggle('hidden')">En savoir plus</button>
+<div id="plus-info" class="hidden">
+<p>La formation peut être passée en ligne en quelques heures et reste valable à vie. Assurez-vous de présenter votre numéro de licence lors de la location.</p>
+</div>
+</div>
+</section>
+
+<script>
+// Language switch
+const translations = {
+nl: {
+'Bienvenue chez Belgium Drone Services':'Welkom bij Belgium Drone Services',
+'BDS propose des prestations professionnelles de photographie et vidéo par drone ainsi que la location de drones stables et performants pour particuliers et entreprises.':'BDS biedt professionele dronefoto- en videodiensten en verhuur van stabiele en hoogwaardige drones voor particulieren en bedrijven.',
+'Licence & Sécurité':'Licentie & Veiligheid',
+'Tout client doit posséder la licence de pilote drone obligatoire en Belgique. C’est simple, rapide et légal, et permet d’éviter de lourdes amendes.':'Elke klant moet beschikken over een verplichte dronepilotenlicentie in België. Het is eenvoudig, snel en legaal, en voorkomt hoge boetes.',
+'En savoir plus':'Meer info',
+'La formation peut être passée en ligne en quelques heures et reste valable à vie. Assurez-vous de présenter votre numéro de licence lors de la location.':'De training kan in enkele uren online worden gevolgd en blijft levenslang geldig. Zorg ervoor dat u uw licentienummer bij verhuur toont.'
+},
+fr:{}
+};
+document.getElementById('nl').addEventListener('click',()=>{switchLang('nl')});
+document.getElementById('fr').addEventListener('click',()=>{switchLang('fr')});
+function switchLang(lang){
+document.querySelectorAll('h1, h3, p, button').forEach(el=>{
+if(translations[lang][el.innerText]) el.innerText = translations[lang][el.innerText];
+});
+}
+</script>
+</body>
+</html>
